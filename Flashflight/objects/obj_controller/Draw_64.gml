@@ -87,7 +87,7 @@ else
 	var _amt = clamp((az+zone1)%zone-zone+zone1,0,zone1)/zone1;
 	if (_amt>0) && (_amt<.8) && (_amt*10)%1
 	{
-		var _t = "<=    =>";
+		var _t = "<=  Turn!  =>";
 		text_glow((w-string_width(_t))/2,h/2,_t);
 	}
 	

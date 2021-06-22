@@ -1,5 +1,5 @@
 ///@desc
-
+random_set_seed(0);
 quality = 0;
 window_set_cursor(cr_none);
 danger = 0;

@@ -140,7 +140,6 @@ if start
 if keyboard_check_pressed(ord("Q"))
 {
 	quality = (quality+1)%3;
-	display_set_gui_maximize(1/(quality+1),1/(quality+1),0,0);
 }
 
 var _w,_h;

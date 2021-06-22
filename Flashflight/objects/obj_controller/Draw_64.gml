@@ -65,18 +65,20 @@ if !start
 		draw_rectangle(0,0,w,h,0);
 		draw_set_alpha(1);
 		
+		var _scale = 1/(quality+1);
 		var _t = "Click to Start";
-		text_glow((w-string_width(_t))/2,(h-string_height(_t))/2-64,_t);
-		//_t = "Q to change quality";
-		//text_glow((w-string_width(_t))/2,(h-string_height(_t))/2+64,_t);
+		text_glow((w/_scale-string_width(_t))/2,(h/_scale-string_height(_t))/2-64,_t);
+		_t = "Q to change quality";
+		text_glow((w/_scale-string_width(_t))/2,(h/_scale-string_height(_t))/2+64,_t);
 	}
 	
 }
 else
 {
-	text_glow(256,32,string(points)+(points==1?" Point":" Points"));
+	text_glow(128,32,string(points)+(points==1?" Point":" Points"));
 	draw_set_alpha(max(cos(max(hit*pi*4,0)),0));
-	if (hp>=0) text_glow(256,128,string(hp)+(hp==1?" Shield":" Shields"));
+	if (hp>=0) text_glow(128,128,string(hp)+(hp==1?" Shield":" Shields"));
+	
 	
 	draw_set_alpha(max(sin(max(warning*pi*8,0)),0));
 	var _t = "Warning! Particles!";

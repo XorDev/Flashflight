@@ -41,14 +41,18 @@ function path(c)
 
 function text_glow(x,y,string)
 {
+	var _scale = 1/(quality+1);
+	matrix_set(matrix_world,matrix_build(0,0,0,0,0,0,_scale,_scale,1))
+	
 	draw_set_color($994411);
-	draw_text_ext(x+2,y,string,54,w-256);
-	draw_text_ext(x-2,y,string,54,w-256);
-	draw_text_ext(x,y+2,string,54,w-256);
-	draw_text_ext(x,y-2,string,54,w-256);
+	draw_text_ext(x+2,y,string,54,w/_scale-256);
+	draw_text_ext(x-2,y,string,54,w/_scale-256);
+	draw_text_ext(x,y+2,string,54,w/_scale-256);
+	draw_text_ext(x,y-2,string,54,w/_scale-256);
 	draw_set_color($DDAA66);
-	draw_text_ext(x,y,string,54,w-256)
+	draw_text_ext(x,y,string,54,w/_scale-256)
 	draw_set_color(-1);
+	matrix_set(matrix_world,matrix_build_identity());
 }
 
 start = 0;

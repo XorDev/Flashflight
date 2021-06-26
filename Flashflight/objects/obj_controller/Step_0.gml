@@ -73,7 +73,7 @@ if start
 		danger_target = choose(0,1)^(x>0);
 		warning = danger_target*2;
 		zone_num++
-		angle_target = angle-30*sign(x);
+		angle_target = angle-30*(x>0?1:-1);
 	}
 
 	spd = lerp(spd,start,.1);

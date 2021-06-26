@@ -41,8 +41,9 @@ if !start
 		var _t = "Steer with the mouse! Press M to mute. Try to collect as many neon rings as possible while avoiding obstacles and whiteholes!\nTry to last as long as possible to acheive a good score!\n\nThere are safer routes and more dangerous routes so learning them can help you on your next run\n\nClick to continue"
 		text_glow(128,128,_t);
 		
-		draw_set_halign(fa_center);
-		if (points>0) text_glow(w/2,h-256,"Score: "+string(points));
+		var _scale = 1/(quality+1);
+		var _t = "Score: "+string(points)
+		if (points>0) text_glow((w/_scale-string_width(_t))/2,h/_scale-256,_t);
 		draw_set_halign(fa_left);
 		
 		draw_set_color(0);
